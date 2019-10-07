@@ -11,6 +11,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -30,6 +35,7 @@ public class SellerFragement extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    ListView listView;
 
 
     public SellerFragement() {
@@ -61,13 +67,32 @@ public class SellerFragement extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_seller_fragement, container, false);
+        View rootView =  inflater.inflate(R.layout.fragment_seller_fragement, container, false);
+
+        List<TableClass> data = new ArrayList<>();
+        data.add(new TableClass("Title1","1"));
+        data.add(new TableClass("Title1","2"));
+        data.add(new TableClass("Title1","3"));
+        data.add(new TableClass("Title1","4"));
+
+        //String[] maintitle = {"Title1","Title2","Title3","Title4","Title5"};
+        //String[] subtitle = {"1","2","3","4","5"};
+
+        listView = (ListView) rootView.findViewById(R.id.seller_listView);
+        //ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1
+        //, subtitle);
+        MyAdapter adapter=new MyAdapter(this.getActivity(), R.layout.myxml ,data);
+        listView.setAdapter(adapter);
+
+        return rootView;
     }
 
     @Override
