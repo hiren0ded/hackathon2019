@@ -77,19 +77,24 @@ public class SellerFragement extends Fragment {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_seller_fragement, container, false);
 
-        List<TableClass> data = new ArrayList<>();
+       /* List<TableClass> data = new ArrayList<>();
         data.add(new TableClass("Title1","1"));
         data.add(new TableClass("Title1","2"));
         data.add(new TableClass("Title1","3"));
         data.add(new TableClass("Title1","4"));
 
-        //String[] maintitle = {"Title1","Title2","Title3","Title4","Title5"};
-        //String[] subtitle = {"1","2","3","4","5"};
 
         listView = (ListView) rootView.findViewById(R.id.seller_listView);
-        //ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1
-        //, subtitle);
         MyAdapter adapter=new MyAdapter(this.getActivity(), R.layout.myxml ,data);
+        listView.setAdapter(adapter);*/
+
+        List<SellerData> data = new ArrayList<>();
+        data.add(new SellerData("https://imagevars.gulfnews.com/2019/06/16/apple-3860991_1920_16b6049de6c_large.jpg","Apple","40","hiren@gmail.com"));
+        data.add(new SellerData("https://images.unsplash.com/photo-1515778767554-42d4b373f2b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80","Grapes","20","hiren@gmail.com"));
+        data.add(new SellerData("https://thumbs.dreamstime.com/b/watermelon-slices-wooden-table-55476817.jpg","Watermalon","10","hiren@gmail.com"));
+
+        listView = (ListView) rootView.findViewById(R.id.seller_listView);
+        SellerAdapter adapter=new SellerAdapter(this.getActivity(), R.layout.seller_cardview ,data);
         listView.setAdapter(adapter);
 
         return rootView;
@@ -100,6 +105,8 @@ public class SellerFragement extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("Sellet Activity...");
     }
+
+
 
 
 }

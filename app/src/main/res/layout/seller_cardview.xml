@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/seller_readius">
+
+
+        <ImageView
+            android:id="@+id/sellerview_imageView"
+            android:layout_width="match_parent"
+            android:layout_height="500px" />
+
+        <TextView
+            android:id="@+id/sellerview_Email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email:"
+            android:textSize="16sp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/sellerview_Product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product:"
+            android:textSize="16sp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/sellerview_Credit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Credit:"
+            android:textSize="16sp"
+            android:layout_marginLeft="10dp"/>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="horizontal" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginLeft="10dp">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Approve"
+                android:id="@+id/sellerview_approve" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reject"
+                android:id="@+id/sellerview_reject" />
+
+        </LinearLayout>
+
+
+</LinearLayout>
