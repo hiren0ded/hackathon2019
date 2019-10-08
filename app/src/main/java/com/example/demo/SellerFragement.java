@@ -188,9 +188,13 @@ public class SellerFragement extends Fragment {
                 String Email = data.getString("CustomerEmail");
                 String Product = data.getString("ProductName");
                 String Credit = data.getString("creditScore");
-                seller_data.add(new SellerData(URl, Product, Credit, Email));
+                String MRP = data.getString("MRP");
+                String tableid = data.getString("id");
+                String customerid = data.getString("CustomerId");
+                seller_data.add(new SellerData(URl, Product, Credit, Email, MRP, tableid, customerid));
                 Log.d("HIREN TESTING", URl+ " "+ Credit + "size:"+seller_data.size());
             }
+
 
             //SellerAdapter adapter=new SellerAdapter(this.getActivity(), R.layout.seller_cardview ,seller_data);
             //listView.setAdapter(adapter);

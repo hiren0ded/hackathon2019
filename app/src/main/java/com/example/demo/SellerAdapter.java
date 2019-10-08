@@ -3,8 +3,10 @@ package com.example.demo;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,13 +15,22 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SellerAdapter extends ArrayAdapter<SellerData> {
 
@@ -50,16 +61,18 @@ public class SellerAdapter extends ArrayAdapter<SellerData> {
         TextView textViewEmail = view.findViewById(R.id.sellerview_Email);
         TextView textViewProduct = view.findViewById(R.id.sellerview_Product);
         TextView textViewCredit = view.findViewById(R.id.sellerview_Credit);
+        TextView textViewMRP = view.findViewById(R.id.sellerview_MRP);
         Button buttonApprove = view.findViewById(R.id.sellerview_approve);
         Button buttonReject = view.findViewById(R.id.sellerview_reject);
 
         //getting the hero of the specified position
-        SellerData data = printData.get(position);
+        final SellerData data = printData.get(position);
 
         //adding values to the list item
-        textViewEmail.setText("Email:"+ data.Email);
-        textViewProduct.setText("Product:"+ data.Product);
-        textViewCredit.setText("Credit:"+ data.Credit);
+        textViewEmail.setText("Email: "+ data.Email);
+        textViewProduct.setText("Product: "+ data.Product);
+        textViewCredit.setText("Credit: "+ data.Credit);
+        textViewMRP.setText("MRP: "+ data.MRP);
 
         Picasso.with(context)
                 .load(data.ImageUrl)
@@ -76,8 +89,8 @@ public class SellerAdapter extends ArrayAdapter<SellerData> {
             public void onClick(View view) {
                 //we will call this method to remove the selected value from the list
                 //we are passing the position which is to be removed in the method
+                Approve(data.tableid,  data.customerId, data.Credit);
 
-                //removeHero(position);
             }
         });
 
@@ -86,7 +99,10 @@ public class SellerAdapter extends ArrayAdapter<SellerData> {
             public void onClick(View view) {
                 //we will call this method to remove the selected value from the list
                 //we are passing the position which is to be removed in the method
-                removeHero(position);
+
+                reject(data.tableid, position);
+
+                //removeHero(position);
             }
         });
 
@@ -124,5 +140,81 @@ public class SellerAdapter extends ArrayAdapter<SellerData> {
         //creating and displaying the alert dialog
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    private void Approve(final String id, final String CustomerID, final String creditScore){
+        String url = "https://myspring.azurewebsites.net/addCredits";
+        final ProgressDialog pdialog = new ProgressDialog(getContext());
+        pdialog.setTitle("Approving.....");
+        pdialog.setCanceledOnTouchOutside(false);
+        pdialog.show();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(getContext(),response,Toast.LENGTH_LONG).show();
+                        pdialog.dismiss();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getContext(),error.toString(),Toast.LENGTH_LONG).show();
+                        pdialog.dismiss();
+                    }
+                }){
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("id",id);
+                params.put("CustomerId",CustomerID);
+                params.put("creditScore", creditScore);
+                return params;
+            }
+
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(stringRequest);
+    }
+
+    private void reject(final String id, final int position){
+        String url = "https://myspring.azurewebsites.net/rejectRequest";
+        final ProgressDialog pdialog = new ProgressDialog(getContext());
+        pdialog.setTitle("Rejecting Item.....");
+        pdialog.setCanceledOnTouchOutside(false);
+        pdialog.show();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(getContext(),response,Toast.LENGTH_LONG).show();
+                        pdialog.dismiss();
+                        printData.remove(position);
+                        //reloading the list
+                        notifyDataSetChanged();
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getContext(),error.toString(),Toast.LENGTH_LONG).show();
+                        pdialog.dismiss();
+                    }
+                }){
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("id",id);
+                return params;
+            }
+
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(stringRequest);
     }
 }

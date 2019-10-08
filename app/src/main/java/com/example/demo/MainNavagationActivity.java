@@ -101,6 +101,7 @@ public class MainNavagationActivity extends AppCompatActivity
         }
         else if (id == R.id.nav_Logout) {
             editor.remove("login");
+            editor.remove("role");
             editor.commit();
             Intent myIntent = new Intent(MainNavagationActivity.this, LoginActivity.class);
             MainNavagationActivity.this.startActivity(myIntent);
