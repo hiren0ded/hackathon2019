@@ -27,6 +27,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.roger.catloadinglibrary.CatLoadingView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -53,6 +54,7 @@ public class SellerFragement extends Fragment {
     private String mParam1;
     private String mParam2;
     ListView listView;
+    CatLoadingView catLoadingView;
 
 
     public SellerFragement() {
@@ -111,10 +113,14 @@ public class SellerFragement extends Fragment {
         data.add(new SellerData("https://thumbs.dreamstime.com/b/watermelon-slices-wooden-table-55476817.jpg","Watermalon","10","hiren@gmail.com"));*/
 
 
-        dialog = new ProgressDialog(getContext());
-        dialog.setCanceledOnTouchOutside(false);
-        dialog.setMessage("Fetching Latest Data.......");
-        dialog.show();
+        //dialog = new ProgressDialog(getContext());
+        //dialog.setCanceledOnTouchOutside(false);
+        //dialog.setMessage("Fetching Latest Data.......");
+        //dialog.show();
+
+        catLoadingView = new CatLoadingView();
+        catLoadingView.setCanceledOnTouchOutside(false);
+        catLoadingView.show(getFragmentManager(),"");
         getSellerData();
 
         listView = (ListView) rootView.findViewById(R.id.seller_listView);
@@ -149,13 +155,16 @@ public class SellerFragement extends Fragment {
                         SellerAdapter adapter=new SellerAdapter(getContext(), R.layout.seller_cardview ,seller_data);
                         listView.setAdapter(adapter);
 
-                        dialog.dismiss();
+                        catLoadingView.dismiss();
+                        //dialog.dismiss();
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(getContext(),error.toString(),Toast.LENGTH_LONG).show();
+                        catLoadingView.dismiss();
+                        //dialog.dismiss();
                     }
                 }){
             @Override

@@ -22,6 +22,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.roger.catloadinglibrary.CatLoadingView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -37,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
     private String url = "https://myspring.azurewebsites.net/login";
     public static boolean login = false;
     private ProgressDialog dialog;
+    CatLoadingView catLoadingView;
 
     String user_role = "USER";
 
@@ -70,8 +72,11 @@ public class LoginActivity extends AppCompatActivity {
         register = findViewById(R.id.Login_Register);
         radioGroup = findViewById(R.id.Login_RadioGroup);
 
-        dialog = new ProgressDialog(LoginActivity.this);
-        dialog.setCanceledOnTouchOutside(false);
+        //dialog = new ProgressDialog(LoginActivity.this);
+        //dialog.setCanceledOnTouchOutside(false);
+
+        catLoadingView = new CatLoadingView();
+        catLoadingView.setCanceledOnTouchOutside(false);
 
 
 
@@ -95,8 +100,9 @@ public class LoginActivity extends AppCompatActivity {
 
                 if(email_check && password_check)
                 {
-                    dialog.setMessage("Verifying.......");
-                    dialog.show();
+                    //dialog.setMessage("Verifying.......");
+                    //dialog.show();
+                    catLoadingView.show(getSupportFragmentManager(), "");
                     loginUser(email.getText().toString(), password.getText().toString());
 
                 }
@@ -129,7 +135,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         Toast.makeText(LoginActivity.this,response,Toast.LENGTH_LONG).show();
                         login = parseData(response);
-                        dialog.dismiss();
+                        catLoadingView.dismiss();
 
                         if(login) {
                             Intent myIntent = new Intent(LoginActivity.this, MainNavagationActivity.class);
@@ -142,7 +148,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(LoginActivity.this,error.toString(),Toast.LENGTH_LONG).show();
-                        dialog.dismiss();
+                        catLoadingView.dismiss();
                     }
                 }){
             @Override
