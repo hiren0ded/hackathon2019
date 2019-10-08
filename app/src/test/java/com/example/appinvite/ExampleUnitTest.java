@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.appinvite;
 
 import org.junit.Test;
 
