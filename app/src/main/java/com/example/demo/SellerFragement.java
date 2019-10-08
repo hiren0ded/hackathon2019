@@ -136,6 +136,7 @@ public class SellerFragement extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        super.getActivity().setTitle("Verify Requests");
     }
 
     private void getSellerData(){

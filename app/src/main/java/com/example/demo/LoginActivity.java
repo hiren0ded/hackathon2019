@@ -171,9 +171,10 @@ public class LoginActivity extends AppCompatActivity {
             if(status == true) {
                 SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
                 SharedPreferences.Editor editor = pref.edit();
-                Toast.makeText(this, "Login Successful::", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
                 userid = json.getString("userid");
                 editor.putString("login", userid);
+                editor.putString("role", user_role);
                 editor.commit();
                 return true;
             }

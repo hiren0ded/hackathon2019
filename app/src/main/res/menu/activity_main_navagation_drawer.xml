@@ -13,9 +13,9 @@
             android:icon="@drawable/ic_person_pin_circle_black_24dp"
             android:title="Available Products" />
         <item
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_settings_black_24dp"
-            android:title="@string/menu_tools" />
+            android:id="@+id/nav_seller_verify"
+            android:icon="@drawable/ic_check_circle_black_24dp"
+            android:title="Verify Products" />
     </group>
 
     <item android:title="Communicate">

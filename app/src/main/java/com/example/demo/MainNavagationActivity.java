@@ -7,6 +7,7 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.util.Log;
 import android.view.View;
 
 import androidx.core.view.GravityCompat;
@@ -44,6 +45,16 @@ public class MainNavagationActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        Menu nav_Menu = navigationView.getMenu();
+
+        SharedPreferences pref = this.getSharedPreferences("MyPref", 0);
+        String isSeller = pref.getString("role","USER");
+        if(isSeller.equals("USER")) {
+            nav_Menu.findItem(R.id.nav_seller_verify).setVisible(false);
+            Log.d("HIREN:VERIFY PRODUCT", "hide");
+        }
+
     }
 
     @Override
@@ -93,7 +104,7 @@ public class MainNavagationActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             fragment = new HomeFragement();
         }
-        else if (id == R.id.nav_tools) {
+        else if (id == R.id.nav_seller_verify) {
             fragment = new SellerFragement();
         }
         else if (id == R.id.nav_products) {
