@@ -143,7 +143,7 @@ public class SellerAdapter extends ArrayAdapter<SellerData> {
     }
 
     private void Approve(final String id, final String CustomerID, final String creditScore){
-        String url = "https://myspring.azurewebsites.net/addCredits";
+        String url = "https://wizardsapi.azurewebsites.net/addCredits";
         final ProgressDialog pdialog = new ProgressDialog(getContext());
         pdialog.setTitle("Approving.....");
         pdialog.setCanceledOnTouchOutside(false);
@@ -180,7 +180,7 @@ public class SellerAdapter extends ArrayAdapter<SellerData> {
     }
 
     private void reject(final String id, final int position){
-        String url = "https://myspring.azurewebsites.net/rejectRequest";
+        String url = "https://wizardsapi.azurewebsites.net/rejectRequest";
         final ProgressDialog pdialog = new ProgressDialog(getContext());
         pdialog.setTitle("Rejecting Item.....");
         pdialog.setCanceledOnTouchOutside(false);

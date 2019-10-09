@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     private RequestQueue mRequestQueue;
     private StringRequest mStringRequest;
-    private String url = "https://myspring.azurewebsites.net/login";
+    private String url = "https://wizardsapi.azurewebsites.net/login";
     public static boolean login = false;
     private ProgressDialog dialog;
     CatLoadingView catLoadingView;
