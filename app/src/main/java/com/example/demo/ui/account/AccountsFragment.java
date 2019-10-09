@@ -1,6 +1,7 @@
 package com.example.demo.ui.account;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,7 +47,7 @@ public class AccountsFragment extends Fragment implements View.OnClickListener {
         });
 
 
-        btn = (Button) root.findViewById(R.id.button);
+        btn = (Button) root.findViewById(R.id.accoutn_logout);
         btn.setOnClickListener(this);
 
 
@@ -59,9 +60,16 @@ public class AccountsFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
 
 
-        Intent intent = new Intent(getActivity(), StepCounterActivity.class);
-        startActivity(intent);
-        // implements your things
+        SharedPreferences pref = getActivity().getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        SharedPreferences.Editor editor = pref.edit();
+
+        editor.remove("login");
+        editor.remove("role");
+        editor.commit();
+        Intent myIntent = new Intent(getActivity(), LoginActivity.class);
+        startActivity(myIntent);
+
+
     }
 
 

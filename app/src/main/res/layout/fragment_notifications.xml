@@ -22,10 +22,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/accoutn_logout"
         android:layout_width="308dp"
         android:layout_height="50dp"
-        android:text="Step Counter"></Button>
+        android:text="LogOut"></Button>
 
 
 </LinearLayout>
