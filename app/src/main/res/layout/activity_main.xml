@@ -1,15 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HI I AM MAIN"/>
+        android:gravity="center"
+        android:soundEffectsEnabled="false"
+        android:text="Hi! Username:Hiren Rank:20/100 "
+        android:textColor="#0F0E0E"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextView"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="17dp"
+        android:gravity="center"
+        android:text="Beat My Score"
+        tools:layout_editor_absoluteX="365dp"
+        tools:layout_editor_absoluteY="420dp" />
 
-</LinearLayout>
+</RelativeLayout>

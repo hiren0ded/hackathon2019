@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.demo">
-
-    <uses-permission android:name="android.permission.INTERNET">
-    </uses-permission>
+    package="com.example.final_demo">
 
     <application
         android:allowBackup="true"
@@ -13,11 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainNavagationActivity"
-            android:label="@string/title_activity_main_navagation"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".LoginActivity">
+            android:name=".SecondActivity">
+            <intent-filter>
+                <action android:name="com.example.final_demo.SecondActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
