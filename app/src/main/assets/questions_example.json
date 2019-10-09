@@ -5,23 +5,23 @@
         "id": 18,
         "question_type_id": 1,
         "question_type_name": "CheckBox",
-        "question_name": "Type of Operating System ?",
+        "question_name": "At what time do you usually leave for work ?",
         "question_item": [
           {
             "answer_id": "11",
-            "name": "Android"
+            "name": "Between 8-9AM"
           },
           {
             "answer_id": "12",
-            "name": "iOS"
+            "name": "9-10AM"
           },
           {
             "answer_id": "13",
-            "name": "Windows"
+            "name": "After 12 PM"
           },
           {
             "answer_id": "14",
-            "name": "Linux"
+            "name": "Night shifts"
           }
         ]
       },
@@ -29,31 +29,23 @@
         "id": 7,
         "question_type_id": 2,
         "question_type_name": "Radio",
-        "question_name": "Type of Brand ?",
+        "question_name": "How do you usually commute ?",
         "question_item": [
           {
             "answer_id": "21",
-            "name": "Samsung"
+            "name": "Personal vehicle"
           },
           {
             "answer_id": "22",
-            "name": "Apple"
+            "name": "Uber/Ola"
           },
           {
             "answer_id": "23",
-            "name": "Motorola"
+            "name": "Public Transport"
           },
           {
             "answer_id": "24",
-            "name": "Google"
-          },
-          {
-            "answer_id": "25",
-            "name": "HTC"
-          },
-          {
-            "answer_id": "26",
-            "name": "LG"
+            "name": "Car pooling with office staff"
           }
         ]
       },
@@ -61,27 +53,23 @@
         "id": 6,
         "question_type_id": 1,
         "question_type_name": "CheckBox",
-        "question_name": "Included features ?",
+        "question_name": "At what time do you hit the gym ?",
         "question_item": [
           {
             "answer_id": "31",
-            "name": "FM Player"
+            "name": "After 6PM"
           },
           {
             "answer_id": "32",
-            "name": "Finger Print"
+            "name": "Between 6PM-8PM"
           },
           {
             "answer_id": "33",
-            "name": "NFC"
+            "name": "Early morning before work"
           },
           {
             "answer_id": "34",
-            "name": "USB"
-          },
-          {
-            "answer_id": "35",
-            "name": "Wireless Charging"
+            "name": "After 11PM"
           }
         ]
       },
@@ -89,27 +77,15 @@
         "id": 5,
         "question_type_id": 2,
         "question_type_name": "Radio",
-        "question_name": "Manufacture year ?",
+        "question_name": "Do you carry your own lunch to your workplace or buy packed food ?",
         "question_item": [
           {
             "answer_id": "41",
-            "name": "2009 - 2011"
+            "name": "Carry my own lunch"
           },
           {
             "answer_id": "42",
-            "name": "2011 - 2013"
-          },
-          {
-            "answer_id": "43",
-            "name": "2013 - 2015"
-          },
-          {
-            "answer_id": "44",
-            "name": "2015 -  2018"
-          },
-          {
-            "answer_id": "45",
-            "name": "2018 -  above"
+            "name": "Buy food from nearby shops"
           }
         ]
       },
@@ -117,31 +93,23 @@
         "id": 2,
         "question_type_id": 2,
         "question_type_name": "Radio",
-        "question_name": "Processor Brand ?",
+        "question_name": "How often do you shop ?",
         "question_item": [
           {
             "answer_id": "51",
-            "name": "Apple"
+            "name": "During weekends"
           },
           {
             "answer_id": "52",
-            "name": "Broadcom"
+            "name": "Once in 2 weeks"
           },
           {
             "answer_id": "53",
-            "name": "Intel"
+            "name": "Once a month"
           },
           {
             "answer_id": "54",
-            "name": "Snapdragon"
-          },
-          {
-            "answer_id": "55",
-            "name": "Mediatek"
-          },
-          {
-            "answer_id": "56",
-            "name": "AMD"
+            "name": "Only during sale!"
           }
         ]
       },
@@ -149,31 +117,23 @@
         "id": 19,
         "question_type_id": 2,
         "question_type_name": "Radio",
-        "question_name": "Payment mode ?",
+        "question_name": "How much water do you consume in a day ?",
         "question_item": [
           {
+            "answer_id": "64",
+            "name": "I don't drink water at all"
+          },
+          {
             "answer_id": "61",
-            "name": "Cash On Delivery"
+            "name": "Less than a litre"
           },
           {
             "answer_id": "62",
-            "name": "Android Pay"
+            "name": "2-4L"
           },
           {
             "answer_id": "63",
-            "name": "Net Banking"
-          },
-          {
-            "answer_id": "64",
-            "name": "Credit/Debit"
-          },
-          {
-            "answer_id": "65",
-            "name": "Saved Cards"
-          },
-          {
-            "answer_id": "66",
-            "name": "My Wallet"
+            "name": "More than 5L"
           }
         ]
       }

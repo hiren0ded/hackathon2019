@@ -40,6 +40,8 @@
                 android:text="Answers"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="20sp"
+                android:textColor="@color/colorWhite"
+                android:background="#E14C87"
                 />
 
         </RelativeLayout>

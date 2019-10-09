@@ -218,7 +218,7 @@ public class RadioBoxesFragment extends Fragment
             RadioButton rb = new RadioButton(mContext);
             rb.setText(choice.getName());
             rb.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
-            rb.setTextColor(ContextCompat.getColor(mContext, R.color.grey));
+            rb.setTextColor(ContextCompat.getColor(mContext, R.color.colorWhite));
             rb.setPadding(10, 40, 10, 40);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             params.leftMargin = 25;

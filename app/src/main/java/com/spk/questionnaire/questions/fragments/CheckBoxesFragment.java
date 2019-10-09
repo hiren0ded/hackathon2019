@@ -235,7 +235,7 @@ public class CheckBoxesFragment extends Fragment
 
             checkBox.setText(choice.getName());
             checkBox.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
-            checkBox.setTextColor(ContextCompat.getColor(mContext, R.color.grey));
+            checkBox.setTextColor(ContextCompat.getColor(mContext, R.color.colorWhite));
             checkBox.setPadding(10, 40, 10, 40);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             params.leftMargin = 25;
