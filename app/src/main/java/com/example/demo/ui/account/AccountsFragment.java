@@ -34,8 +34,6 @@ public class AccountsFragment extends Fragment implements View.OnClickListener {
                              ViewGroup container, Bundle savedInstanceState) {
 
 
-
-
         accountsViewModel =
                 ViewModelProviders.of(this).get(AccountsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_notifications, container, false);

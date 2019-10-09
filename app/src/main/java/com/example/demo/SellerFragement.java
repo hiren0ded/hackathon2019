@@ -48,7 +48,7 @@ public class SellerFragement extends Fragment {
     private static ProgressDialog dialog;
 
     List<SellerData> seller_data = new ArrayList<>();
-    private String url = "https://myspring.azurewebsites.net/seller";
+    private String url = "https://wizardsapi.azurewebsites.net/seller";
 
     // TODO: Rename and change types of parameters
     private String mParam1;

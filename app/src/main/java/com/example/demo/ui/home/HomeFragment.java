@@ -140,7 +140,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void getUserCredit(){
-        String url = "https://myspring.azurewebsites.net/getCredit";
+        String url = "https://wizardsapi.azurewebsites.net/getCredit";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
