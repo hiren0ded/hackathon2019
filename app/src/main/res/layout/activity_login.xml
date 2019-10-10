@@ -24,7 +24,7 @@
 
         android:layout_marginTop="105dp"
         android:layout_centerHorizontal="true"
-        android:text="Hackathon 2019"
+        android:text="Think Globally, Act Locally!"
         android:textColor="#ffffff"
         android:textSize="30sp" />
 
@@ -113,7 +113,7 @@
         android:layout_below="@+id/Login_LoginButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:text="Not a member?Sign in now."
+        android:text="Not a member?Signup now."
         android:textColor="#ffffff"
         android:textSize="17sp" />
 

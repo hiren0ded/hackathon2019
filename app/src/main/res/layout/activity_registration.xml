@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScrollView01"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".RegistrationActivity"
+        android:background="@drawable/colorlayout"
+        android:scrollbars="vertical">
+
+        <TextView
+            android:id="@+id/Register_AppName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="105dp"
+            android:layout_centerHorizontal="true"
+            android:text="Sustain Me"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/Register_Email"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_below="@id/Register_AppName"
+            android:inputType="textWebEmailAddress"
+            android:drawableLeft="@drawable/ic_action_name"
+            android:hint="Email"
+            android:background="@drawable/colorbutton"
+            android:paddingLeft="5dp"
+            android:textColor="#ffffff"
+            android:textColorHint="#FFEDEDED"/>
+        <EditText
+            android:id="@+id/Register_Phone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/Register_Email"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:drawableLeft="@drawable/ic_phone_black_24dp"
+            android:textColor="#ffffff"
+            android:paddingLeft="5dp"
+            android:background="@drawable/colorbutton"
+            android:textColorHint="#ededed"
+            android:inputType="text"
+            android:hint="Contact No." />
+
+
+
+
+        <RadioGroup
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:id="@+id/Login_RadioGroup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_below="@id/Register_Phone"
+            android:orientation="horizontal">
+
+
+            <RadioButton
+                android:id="@+id/Login_RadioBuyer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USER"
+                android:textColor="#ffffff"
+                android:checked="true"
+                android:textSize="18sp"/>
+
+            <RadioButton
+                android:id="@+id/Login_RadioSeller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SHOPPER"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="50dp"
+                android:textSize="18sp"/>
+
+        </RadioGroup>
+
+
+        <EditText
+            android:id="@+id/Register_Password"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/Login_RadioGroup"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:drawableLeft="@drawable/ic_lock_name"
+            android:textColor="#ffffff"
+            android:paddingLeft="5dp"
+            android:background="@drawable/colorbutton"
+            android:textColorHint="#ededed"
+            android:inputType="textPassword"
+            android:hint="Password"
+
+            />
+
+
+        <EditText
+            android:id="@+id/Register_Password_Renter"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="25dp"
+            android:layout_below="@+id/Register_Password"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:drawableLeft="@drawable/ic_lock_name"
+            android:textColor="#ffffff"
+            android:paddingLeft="5dp"
+            android:background="@drawable/colorbutton"
+            android:textColorHint="#ededed"
+            android:inputType="textPassword"
+            android:hint="Re Enter Password"
+
+            />
+
+
+
+        <Button
+            android:id="@+id/Register_Button"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="SIGN IN"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:background="@drawable/colorpink"
+            android:layout_below="@id/Register_Password_Renter"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+
+            android:layout_marginTop="15dp" />
+
+
+    </RelativeLayout>
+</ScrollView>

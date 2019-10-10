@@ -51,4 +51,12 @@
     <string name="achieved">Record Achieved!</string>
     <string name="title_activity_test">test</string>
     <string name="title_activity_maps">Map</string>
+
+    <string-array name="friends_arrays">
+        <item>John Doe</item>
+        <item>Mary Johnson</item>
+        <item>Christian Ericson</item>
+        <item>Andrew N</item>
+    </string-array>
+
 </resources>

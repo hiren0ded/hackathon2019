@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.demo.Challenge;
 import com.example.demo.MapsActivity;
 import com.example.demo.R;
 import com.example.demo.StepCounterActivity;
@@ -26,6 +27,7 @@ public class DashboardFragment extends Fragment {
     CardView products;
     CardView stepcount;
     CardView Goals;
+    CardView challenge;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -68,6 +70,16 @@ public class DashboardFragment extends Fragment {
                 getActivity().startActivity(i);
             }
         });
+
+        challenge = root.findViewById(R.id.dashboardChallenge);
+        challenge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), Challenge.class);
+                getActivity().startActivity(i);
+            }
+        });
+
 
 
         return root;

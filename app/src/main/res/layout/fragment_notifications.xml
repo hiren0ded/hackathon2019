@@ -7,25 +7,43 @@
     android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/text_notifications"
+    <Button
+        android:id="@+id/thing_to_do"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="156dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        android:background="#95F44336"
+        android:text="ThingsTodo"
+        android:textStyle="bold"></Button>
+
 
     <Button
-        android:id="@+id/accoutn_logout"
-        android:layout_width="308dp"
-        android:layout_height="50dp"
-        android:text="LogOut"></Button>
+        android:id="@+id/ReferTOFriend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="#D8FDED5F"
+        android:text="Refer and Earn"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/Contactus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="#A3F8A6"
+        android:text="Contact US"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/Logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="#95C7EE"
+        android:text="Logout"
+        android:textStyle="bold" />
+
 
 
 </LinearLayout>

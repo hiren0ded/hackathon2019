@@ -148,7 +148,7 @@
         <androidx.cardview.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-            android:id="@+id/linkCard"
+            android:id="@+id/dashboardChallenge"
             android:layout_width="@dimen/card_width"
             android:layout_height="@dimen/card_height"
             android:layout_margin="@dimen/medium_margin">
