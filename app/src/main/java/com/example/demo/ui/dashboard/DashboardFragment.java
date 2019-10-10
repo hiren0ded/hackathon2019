@@ -18,12 +18,14 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.demo.MapsActivity;
 import com.example.demo.R;
 import com.example.demo.StepCounterActivity;
+import com.example.demo.todotask.TaskHome;
 
 public class DashboardFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;
     CardView products;
     CardView stepcount;
+    CardView Goals;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -57,6 +59,16 @@ public class DashboardFragment extends Fragment {
                 getActivity().startActivity(i);
             }
         });
+
+        Goals = root.findViewById(R.id.dashboardGoals);
+        Goals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), TaskHome.class);
+                getActivity().startActivity(i);
+            }
+        });
+
 
         return root;
     }
