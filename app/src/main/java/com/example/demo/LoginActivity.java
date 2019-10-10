@@ -162,7 +162,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         }
 
-                        else
+                        else if(login && user_role.equals("SHOPPER"))
                         {
                             Intent myIntent = new Intent(LoginActivity.this, MainNavagationActivity.class);
                             LoginActivity.this.startActivity(myIntent);

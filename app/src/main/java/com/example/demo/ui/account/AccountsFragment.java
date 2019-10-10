@@ -62,7 +62,6 @@ public class AccountsFragment extends Fragment implements View.OnClickListener {
 
         SharedPreferences pref = getActivity().getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         SharedPreferences.Editor editor = pref.edit();
-
         editor.remove("login");
         editor.remove("role");
         editor.commit();
